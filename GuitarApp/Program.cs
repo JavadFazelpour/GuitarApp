@@ -1,5 +1,4 @@
-﻿using System.Reflection.Emit;
-
+﻿
 namespace GuitarApp
 {
     public enum Type
