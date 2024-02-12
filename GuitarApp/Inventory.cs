@@ -29,7 +29,6 @@ namespace GuitarApp
             List<Guitar> searchResults = new List<Guitar>();
             for (int i = 0; i < guitars.Count; i++)
             {
-                GuitarSpec guitarSpec = guitars[i].GetSpec();
                 if (guitars[i].GetSpec().Matches(searchSpec))
                     searchResults.Add(guitars[i]);
             }

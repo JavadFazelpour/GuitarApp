@@ -3,42 +3,44 @@ namespace GuitarApp
 {
     public class GuitarSpec
     {
-        private string model;
-        private Builder builder;
-        private Wood backWood, topWood;
-        private Type type;
-        int numStrings;
+        public string Model { get; set; }
+        public Builders Builder { get; set; }
+        public Wood BackWood { get; set; }
+        public Wood TopWood { get; set; }
+        public Types Type { get; set; }
 
-        public GuitarSpec(string model, Builder builder, Wood backWood, Wood topWood, Type type, int numStrings)
+        public int NumStrings { get; set; }
+        public GuitarSpec(string model, Builders builder, Wood backWood, Wood topWood, Types type, int numStrings)
         {
-            this.model = model;
-            this.builder = builder;
-            this.backWood = backWood;
-            this.topWood = topWood;
-            this.type = type;
-            this.numStrings = numStrings;
+            Model = model;
+            Builder = builder;
+            BackWood = backWood;
+            TopWood = topWood;
+            Type = type;
+            NumStrings = numStrings;
         }
-
-        public Builder GetBuilder() => builder;
-        public string GetModel() => model;
-        public Type getType() => type;
-        public Wood GetBackWood() => backWood;
-        public Wood GetTopWood() => topWood;
-        public int GetNumStrings() => numStrings;
-
+        public override string ToString()
+        {
+            return $"{Builder.ToLowerCaseString()} " +
+                   $"{Model} " +
+                   $"{NumStrings}-string " +
+                   $"{Type.ToLowerCaseString()} guitar:\n   " +
+                   $"{BackWood.ToLowerCaseString()} back and sides,\n   " +
+                   $"{TopWood.ToLowerCaseString()} top.\n   ";
+        }
         public bool Matches(GuitarSpec otherSpec)
         {
-            if (builder.ToLowerCaseString() != otherSpec.builder.ToLowerCaseString())
+            if (Builder.ToLowerCaseString() != otherSpec.Builder.ToLowerCaseString())
                 return false;
-            if (model.ToLower() != otherSpec.model.ToLower() &&
-                model!=null &&
-                !model.Equals(""))
+            if (Model.ToLower() != otherSpec.Model.ToLower() &&
+                Model != null &&
+                !Model.Equals(""))
                 return false;
-            if (type.ToLowerCaseString() != otherSpec.type.ToLowerCaseString())
+            if (Type.ToLowerCaseString() != otherSpec.Type.ToLowerCaseString())
                 return false;
-            if (backWood.ToLowerCaseString() != otherSpec.backWood.ToLowerCaseString())
+            if (BackWood.ToLowerCaseString() != otherSpec.BackWood.ToLowerCaseString())
                 return false;
-            if (topWood.ToLowerCaseString() != otherSpec.topWood.ToLowerCaseString())
+            if (TopWood.ToLowerCaseString() != otherSpec.TopWood.ToLowerCaseString())
                 return false;
             return true;
         }

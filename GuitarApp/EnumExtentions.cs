@@ -3,11 +3,11 @@ namespace GuitarApp
 {
     public static class EnumExtentions
     {
-        public static string ToLowerCaseString(this Type type)
+        public static string ToLowerCaseString(this Types type)
         {
             return type.ToString().ToLower();
         }
-        public static string ToLowerCaseString(this Builder builder)
+        public static string ToLowerCaseString(this Builders builder)
         {
             return builder.ToString().ToLower();
         }

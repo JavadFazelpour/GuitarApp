@@ -1,7 +1,7 @@
 ﻿
 namespace GuitarApp
 {
-    public enum Type
+    public enum Types
     {
         ACOUSTIC, ELECTRIC,
     }
