@@ -20,11 +20,11 @@ namespace GuitarApp
                 Console.WriteLine("Erin, you might like these guitars: ");
                 foreach (var guitar in matchedGuitars)
                 {
-                    var guitarSpec = guitar.GetSpec();
+                    var guitarSpec = guitar.Spec;
                     //  May be it's better to have this string in a method in the GuitarSpec calss
                     //for better encapsulation
                     Console.WriteLine($" We have a {guitarSpec}" +
-                        $"You can have it for only {guitar.GetPrice()} !\n ----  ");
+                        $"You can have it for only {guitar.Price} !\n ----  ");
                 }
             }
             else

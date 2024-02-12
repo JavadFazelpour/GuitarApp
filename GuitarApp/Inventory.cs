@@ -19,7 +19,7 @@ namespace GuitarApp
         {
             foreach (var item in guitars)
             {
-                if (item.GetSerialNumber() == serialNumber)
+                if (item.SerialNumber == serialNumber)
                     return item;
             }
             return null;
@@ -29,7 +29,7 @@ namespace GuitarApp
             List<Guitar> searchResults = new List<Guitar>();
             for (int i = 0; i < guitars.Count; i++)
             {
-                if (guitars[i].GetSpec().Matches(searchSpec))
+                if (guitars[i].Spec.Matches(searchSpec))
                     searchResults.Add(guitars[i]);
             }
             return searchResults;
